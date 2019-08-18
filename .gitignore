@@ -1,0 +1,14 @@
+/site/*
+!/site/.gitkeep
+
+/log/*
+!/log/.gitkeep
+
+# OS
+.DS_Store
+
+# Dependencies
+/vendor
+/node_moduels
+
+# IDEs
