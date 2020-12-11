@@ -17,7 +17,7 @@ services:
   php:
     build:
       context: ./build
-      dockerfile: php.dockerfile
+      dockerfile: php74.dockerfile
     ports:
       - "9000:9000"
     volumes:
