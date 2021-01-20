@@ -1,6 +1,12 @@
 FROM php:7.4-fpm
 
-RUN apt-get update \
+RUN apt-get update -y && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install pdo pdo_mysql mysqli
 
 RUN chown -R www-data:"$USER" /var/www/html
